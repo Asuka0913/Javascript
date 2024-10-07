@@ -112,20 +112,14 @@ setTimeout(function() {
 }, 3000);
 
 // Q3
-let num = 10;
-if (num > 0){
+let num = 0;
+if (num > 0) {
   console.log('num is greater than 0');
-}
-
-num = -1;
-if (num < 0){
+  }else if (num < 0) {
   console.log('num is less than 0');
-}
-
-num = 0;
-if (num == 0){
-  console.log('num is 0');
-}
+  }else {
+    console.log('num is 0');
+  }
 
 // Q4
 let numbers = [];
