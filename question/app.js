@@ -90,11 +90,12 @@ calc.divide(5, 1);
 //Q9
 function remainder(x, y) {
   let remain = x % y;
-  console.log(x + 'を' + y + 'で割った余りは' + remain + 'です。');
   return remain;
 }
 
-remainder(5, 3);
+let numx = 5;
+let numy = 3;
+console.log(numx + 'を' + numy + 'で割った余りは' + remainder(numx, numy) + 'です。');
 
 // Q10
 // スコープは関数内でしか参照されないです。なので変数ｘが関数fooのなかで定義されて居りますので、console.logを
