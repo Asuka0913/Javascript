@@ -3,12 +3,12 @@
 let nickname = 'ごっしー';
 let age = '28';
 let greet = '私のニックネームは' + nickname + 'です。' + '年齢は' + age + '歳です。';
-console.log(greet);
+console.log('Q1 ⇒', greet);
 
 // Q2
 let language = ['JavaScript', 'PHP', 'Ruby', 'Python', 'Go'];
-console.log('language[0] ⇒', language[0]);
-console.log('language[3] ⇒', language[3]);
+console.log('Q2 language[0] ⇒', language[0]);
+console.log('Q2 language[3] ⇒', language[3]);
 let languageText = `私の好きな言葉は${language[0]}です。
 次は${language[3]}を勉強してみたいです。`;
 console.log(languageText);
@@ -51,7 +51,7 @@ let playerList = [
 ];
 console.log(playerList[1].favorites[1]);
 
-console.log((playerList[0].age + playerList[1].age + playerList[2].age) / 3);//Q5
+console.log((playerList[0].age + playerList[1].age + playerList[2].age) / playerList.length);//Q5
 
 //Q6
 function sayHello(){
@@ -98,9 +98,8 @@ let numy = 3;
 console.log(numx + 'を' + numy + 'で割った余りは' + remainder(numx, numy) + 'です。');
 
 // Q10
-// スコープは関数内でしか参照されないです。なので変数ｘが関数fooのなかで定義されて居りますので、console.logを
-// 関数内の入れることでコンソールに1が出力され、エラーが出力されることはありません。
-
+// letで定義された変数xは関数fooのスコープ内でのみ参照可能(ローカル関数)なので、
+// 関数の外からconsole.log(x);で変数xを参照しようとするとエラーが起きます。
 
 // Section6
 // Q1
@@ -132,13 +131,13 @@ console.log(numbers);
 // Q5
 let mixed = [4, '2', 5, '8', '9', 0, 1];
 for (let i = 0; i < mixed.length; i++) {
-  console.log(typeof mixed[i]);
-  if (typeof mixed[i] == 'string'){
-    console.log('not number');
-  }else { if ( mixed[i] % 2 == 0) {
+if ( typeof mixed[i] === 'number') {
+  if ( mixed[i] % 2 === 0) {
     console.log('even');
-  }else if ( mixed[i] % 2 == 1) {
+  }else {
     console.log('odd');
   }
+}else {
+  console.log('not number');
 }
 }
